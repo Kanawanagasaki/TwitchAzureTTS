@@ -5,7 +5,7 @@
 
 Application that use Azure Speech Service to read messages from Twitch Chat
 
-![First Open](/images/FirstOpen.png)
+![First Open](/TwitchAzureTTS/images/FirstOpen.png)
 
 ### How to use?
 
