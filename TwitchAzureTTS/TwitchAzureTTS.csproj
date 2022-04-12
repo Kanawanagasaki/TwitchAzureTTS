@@ -5,7 +5,31 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>TwitchAzureTTSIcon.ico</ApplicationIcon>
+    <DebugType>none</DebugType>
+    <Version>0.1</Version>
+    <Authors>Kanawanagasaki</Authors>
+    <Description>Application that use Azure Speech Service to read messages from Twitch Chat </Description>
+    <PackageProjectUrl>https://github.com/Kanawanagasaki/TwitchAzureTTS</PackageProjectUrl>
+    <PackageIcon>TwitchAzureTTSIcon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Kanawanagasaki/TwitchAzureTTS</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="TwitchAzureTTSIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Pictures\TwitchAzureTTSIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.6.0" />
