@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <ApplicationIcon>TwitchAzureTTSIcon.ico</ApplicationIcon>
     <DebugType>none</DebugType>
-    <Version>0.1</Version>
+    <Version>0.1.2</Version>
     <Authors>Kanawanagasaki</Authors>
     <Description>Application that use Azure Speech Service to read messages from Twitch Chat </Description>
     <PackageProjectUrl>https://github.com/Kanawanagasaki/TwitchAzureTTS</PackageProjectUrl>

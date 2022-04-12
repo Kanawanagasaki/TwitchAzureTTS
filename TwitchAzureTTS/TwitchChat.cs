@@ -15,6 +15,11 @@ internal static class TwitchChat
         get => Settings.Get("TwitchChannel");
         set => Settings.Set("TwitchChannel", value);
     }
+    internal static bool IgnoreCommands
+    {
+        get => Settings.Get("TwitchIgnoreCommands", "true") == "true";
+        set => Settings.Set("TwitchIgnoreCommands", value ? "true" : "false");
+    }
 
     internal static async Task Connect(bool inBackground = false)
     {
@@ -68,7 +73,8 @@ internal static class TwitchChat
         };
         Client.OnMessageReceived += (_, ev) =>
         {
-            AzureTts.AddTextToRead(ev.ChatMessage.Username.ToLower(), ev.ChatMessage.Message);
+            if(!IgnoreCommands || !ev.ChatMessage.Message.StartsWith("!"))
+                AzureTts.AddTextToRead(ev.ChatMessage.Username.ToLower(), ev.ChatMessage.Message);
             Logger.Log(ev.ChatMessage.Username, ev.ChatMessage.Message, preffixFg: EColors.GREEN);
             Renderer.Render();
         };

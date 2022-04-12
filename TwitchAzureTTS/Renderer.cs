@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace TwitchAzureTTS;
 
@@ -213,6 +214,7 @@ internal static class Renderer
             lines.Add($"  Authenticated with: {TwitchTokenKeeper.UserLogin}");
         lines.Add($"  Channel to connect: {TwitchChat.Channel}");
         lines.Add($"  Status: {TwitchChat.Status}");
+        lines.Add($"  Ignore commands (messages start with !): {TwitchChat.IgnoreCommands}");
 
         lines.Add("");
 
@@ -248,7 +250,7 @@ internal static class Renderer
                 var max = values?.Max() ?? 0;
 
                 lines.Add("Metrics");
-                lines.Add($"  {usedSum} / 5000000");
+                lines.Add($"  {string.Join("", Regex.Replace(string.Join("", usedSum.ToString().Reverse()), ".{3}", "$0 ").Reverse())}/500 000");
 
                 int graphY = y + lines.Count + 1;
 

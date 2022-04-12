@@ -16,7 +16,9 @@ internal static class Menu
                         ? "Pending"
                         : "Disconnect", TwitchConnect, 0 ),
             new( () => "Set Channel", TwitchSetChannel, 0 ),
-            new( ( )=> TwitchTokenKeeper.IsLoggined ? "Logout" : "Login", TwitchLogin, 0 )
+            new( () => TwitchChat.IgnoreCommands ? "Read (!)Commands" : "Ignore (!)Commands",
+                 () => TwitchChat.IgnoreCommands = !TwitchChat.IgnoreCommands, 0 ),
+            new( () => TwitchTokenKeeper.IsLoggined ? "Logout" : "Login", TwitchLogin, 0 )
         }),
         new("Azure TTS", new MenuItem[]
         {
@@ -25,7 +27,7 @@ internal static class Menu
             new(() => "Set Default Voice", AzureSetDefaultVoice, 0),
             new(() => "Set Viewer's Voice", AzureSetViewerVoice, 0),
             new(() => "Reload Synthesizer", AzureTts.ReloadSynthesizer, 0),
-            new(() => "Set Tenant Id", AzureTenantId, 1),
+            new(() => "Set Tenant ID", AzureTenantId, 1),
             new(() => "Select Resource", AzureSelectResource, 1),
             new(() => "Metrics, Login", AzureMetrics.LogIn, 1),
             new(() => "Metrics, Update", AzureMetrics.UpdateMetrics, 1)
