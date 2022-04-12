@@ -259,7 +259,7 @@ internal static class AzureTts
             if (string.IsNullOrWhiteSpace(lines[0])) continue;
             if (string.IsNullOrWhiteSpace(lines[1])) continue;
             int? volume = int.TryParse(lines[2], out int num1) ? num1 : 0;
-            int? pitch = int.TryParse(lines[3], out int num2) ? num1 : 0;
+            int? pitch = int.TryParse(lines[3], out int num2) ? num2 : 0;
             double? rate = double.TryParse(lines[4], NumberStyles.Any, CultureInfo.InvariantCulture, out var num3) ? num3 : 1;
 
             var info = new UserVoiceInfo(lines[0], lines[1], volume, pitch, rate);
