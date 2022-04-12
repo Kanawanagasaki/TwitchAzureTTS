@@ -28,7 +28,7 @@ In Log section of the app you will see that chat joined or error message
 
 #### Setting up Azure Speech Service
 
-1. You need to sign up to [Microsoft Azure](https://azure.microsoft.com/en-us/). Note that you will need to enter your bank card information to register. However, Azure Speech Service will be free for you if you syntenize less than 500 000 characters per month
+1. You need to sign up to [Microsoft Azure](https://azure.microsoft.com/en-us/). Note that you will need to enter your bank card information to register. However, Azure Speech Service will be free for you if you synthesize less than 500 000 characters per month
 2. Go to [Azure Portal](https://portal.azure.com)
 3. Select `Create a resource`
 4. Select `AI + Machine Learning` > `Speech` > `Create`
